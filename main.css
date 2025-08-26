@@ -20,7 +20,7 @@ body {
         }
 
 .container {
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -69,30 +69,13 @@ body {
             text-align: center;
             color: white;
             padding-top: 1rem;
-        }
-        
-.card h3 {
-            font-size: 1.2rem;
-            margin: 0;
-    }
-        
-.card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-    }
-        
+        }        
         /* Эффект наведение */
 .card:hover {
             transform: scale(1.05);
-    }
-        
-        /* Одинокая карта последнего ряда */
-.last-row-card {
-            width: 100%; /* последняя карта занимает всю ширину строки */
-    }        
+    }       
 
-.start-screen {     
-            display: none;       
+.start-screen {                 
             width: 375px; 
             height: 734px;
             text-align: center;            
