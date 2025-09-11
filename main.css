@@ -35,6 +35,8 @@ body {
             overflow: hidden;
             padding: 40px;            
             z-index: 1;   
+            background-image: url('pic/start_screen_bg2.png'); /* Ваш фон */
+            background-size: auto;            
     }
         
         /* Обложка */
@@ -56,24 +58,33 @@ body {
     }
         
 .card {
-            width: 100px; 
-            height: 150px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-            z-index: 1;   
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            text-align: center;
-            color: white;
-            padding-top: 1rem;
-        }        
-        /* Эффект наведение */
+    display: flex;          /* Включаем режим Flexbox */
+    align-items: center;    /* Горизонтальное выравнивание по центру */
+    justify-content: center; /* Вертикальное выравнивание по центру */
+    position: relative;     /* Позиционирование номера */
+    width: 100px;           /* Ширина карточки */
+    height: 150px;          /* Высота карточки */
+    background-image: url('pic/open_now_bg.png'); /* Ваш фон */
+    background-size: cover; /* Масштабируем фон */
+    background-position: center; /* Расположение фона по центру */
+}
+
+.card .card-number {
+    position: absolute;     /* Абсолютное позиционирование номера */
+    top: 5px;               /* Верхнее положение */
+    left: 5px;              /* Левое положение */
+}
+
+.card img {
+    max-width: 100%;        /* Ограничиваем максимальную ширину изображения */
+    max-height: 100%;       /* Ограничиваем максимальную высоту изображения */
+    object-fit: contain;    /* Сохраняем пропорции изображения */
+}
+
 .card:hover {
             transform: scale(1.05);
     }       
+
 
 .start-screen {                 
             width: 375px; 
@@ -82,7 +93,7 @@ body {
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-image: url('pic/bg_orange.png'); /* Путь к изображению */
+            background-image: url('pic/start_screen_bg.png'); /* Путь к изображению */
             background-size: cover;
             background-position: center; /* Центруем изображение */
             background-repeat: no-repeat; /* Изображение не повторяется */
@@ -143,19 +154,19 @@ h1 {
 
 .button-common {
             width: 327px;
-            height: 64px;
-            border: 2px solid #2B2A29; /* Добавлен стиль границы */
-            border-radius: 24px;
+            height: 64px;           
             font-size: 18px;
-            font-family: 'Commissioner', Arial, sans-serif;    
-            color: #FEFEFE;
-            text-transform: uppercase;            
-            background-color: #45a049;
+            font-family: 'Commissioner', Arial, sans-serif;                
+            text-transform: uppercase;                        
             cursor: pointer;
             transition: all 0.3s ease-in-out;
+            background-image: url('pic/start_game_bg.png');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
             }
 .button-common-rules {
-            background-color: #C98F22;
+            background-image: url('pic/read_rules_bg.png');            
         }        
 .question-container {
             display: flex; 
@@ -296,6 +307,26 @@ h1 {
     text-align: center;
 }
 
+.title_28_white {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1;    
+    color: #FFFF;
+    font-weight: bold;    
+    font-family: 'Commissioner', Arial, sans-serif;        
+    text-align: center;
+}
+
+.text_14_white {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1;    
+    color: #FFFF;
+    font-weight: normal;    
+    font-family: 'Commissioner', Arial, sans-serif;        
+    text-align: center;
+}
+
 .modal-image {
     display: flex;    
     justify-content: center;    
@@ -320,10 +351,10 @@ h1 {
     margin: auto; /* Отцентрируем изображение внутри контейнера */
 }
 
-.image-start-screen {
+.image-start-screen {        
     display: flex;    
     justify-content: center;    
-    margin-top: 30px;    
+    margin-top: 20px;    
 }
 
 .image-start-screen img {
@@ -476,7 +507,7 @@ h1 {
     gap: 20px;
 }
 
-.mistersu-dialog {
+.open-card {
     display: none; /* Скрываем диалог по умолчанию */
     position: fixed;
     width: 375px; 
@@ -488,7 +519,7 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-    background-image: url('pic/bg_blue.jpg'); /* Путь к изображению */
+    background-image: url('pic/modal_open_card_bg.png'); /* Путь к изображению */
     background-size: 100% 100%; /* Масштабируем изображение, чтобы оно занимало весь контейнер */
     background-position: center; /* Центруем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */

@@ -7,7 +7,7 @@
     <title>Новогодний праздничный календарь от Суши Мастер</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script> 
     <link rel="stylesheet" href="main.css">  
-    <script src="questions.js"></script>        
+    <script src="cards.js"></script>        
 </head>
 <body>
 
@@ -18,15 +18,12 @@
 
 <div id = "start-screen-id" class="start-screen">
     <div>
-        <div class="image-start-screen">            
-            <img src="pic/rules_cat.png" alt="start_screen_cat_pic">
-        </div>       
-        <div class="title_28_black">
-            <p>Приготовься к интеллектуальному пикнику!</p>
-        </div>        
-        <div class="mistersu-hint-body">
+        <div class="title_28_white" style="margin-top: 280px;">
+            <p>Готовимся к новому году!</p>
+        </div>   
+        <div class="text_14_white" style="margin-top: 20px;">
             <p>Большая Первомайская викторина от Суши Мастер – это настоящий майский марафон знаний.</p>
-        </div>
+        </div>       
         <div class="modal-footer" style="margin-top: 20px;">            
             <button id="show-rules" class="button-common button-common-rules">Читать правила</button>      
         </div>                
@@ -77,82 +74,27 @@
             
 </div>
 
-<div id="mistersuhint" class="mistersu-dialog">
+<div id="open-card-id" class="open-card">
     <div>
         <div class="modal-image">            
-            <img src="pic/mister_су_pic.png" alt="mister_су_pic">
-        </div>       
-        <div class="modal-title">
-            <p>ПОДСКАЗКА МАСТЕРА СУ</p>
-        </div>        
-        <div id="mistersu-hint-text" class="mistersu-hint-body">
-            <p>Текст подсказки</p>
+            <img src="pic/02.png" alt="card_pic">
+        </div>               
+        <div id="card-text" class="mistersu-hint-body">
+            <p>Сет ТВОЙ БРО со скидкой 25%</p>
+        </div>
+        <div class="modal-footer">            
+            <button id="take-promocode-button" class="btn-modal-dialog">Забрать промокод</button>            
         </div>        
         <div class="modal-footer">            
-            <button id="return-game-button" class="btn-modal-dialog">Вернуться к игре</button>            
+            <button id="return-game-button" class="btn-modal-dialog">Назад</button>            
         </div>
     </div>
 </div>
 
 <script>
 
-const cards = [
-    { title: 'Карта 1', description: '1 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 2', description: '2 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 3', description: '3 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 4', description: '4 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 5', description: '5 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 6', description: '6 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 7', description: '7 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 8', description: '8 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 9', description: '9 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 10', description: '10 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 11', description: '11 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 12', description: '12 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 13', description: '13 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 14', description: '14 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 15', description: '15 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 16', description: '16 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 17', description: '17 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 18', description: '18 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 19', description: '19 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 20', description: '20 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 21', description: '21 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 22', description: '22 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 23', description: '23 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 24', description: '24 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 25', description: '25 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 26', description: '26 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 27', description: '27 декабря', imageUrl: 'pic/sushi_master.png' },
-    { title: 'Карта 28', description: '28 декабря', imageUrl: 'pic/leika.png' },
-    { title: 'Карта 29', description: '29 декабря',  imageUrl: 'pic/leika.png'},
-    { title: 'Карта 30', description: '30 декабря', imageUrl: 'pic/palki.png' },
-    { title: 'Карта 31', description: '31 декабря', imageUrl: 'pic/sushi_master.png' }    
-];
-
 
 let rowsContainer = document.getElementById('cards-container');
-for(let i=0; i<Math.ceil(cards.length/3); i++) {
-    let rowDiv = document.createElement('div');
-    rowDiv.className = 'row';
-    
-    for(let j=0; j<3 && ((i*3)+j)<cards.length; j++) {
-        const cardData = cards[(i*3)+j];
-        let cardDiv = document.createElement('div');
-        cardDiv.className = 'card';
-        if(i === Math.floor(cards.length/3)) { // Последняя строка?
-            cardDiv.className += ' last-row-card'; // Добавляем класс последней карты
-        }
-        cardDiv.style.backgroundImage = `url(${cardData.imageUrl})`;
-        cardDiv.innerHTML = `
-            <h3>${cardData.title}</h3>
-            <p>${cardData.description}</p>
-        `;
-        rowDiv.appendChild(cardDiv);
-    }
-    rowsContainer.appendChild(rowDiv);
-}
-
 let isMusicPlay = true;
 let audioMain = document.getElementById("audioMain");
 
@@ -166,8 +108,63 @@ document.getElementById("return-game-button").addEventListener("click", function
     hideDialog(); // Скрыть диалог    
 });
 
-       
+
+    function generateCards() {
+    let rowsContainer = document.getElementById('cards-container');
+
+    for (let i = 0; i < Math.ceil(cards.length / 3); i++) {
+        let rowDiv = document.createElement('div');
+        rowDiv.className = 'row';
+
+        for (let j = 0; j < 3 && ((i * 3) + j) < cards.length; j++) {
+            const cardData = cards[(i * 3) + j];
+            let cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+            if (i === Math.floor(cards.length / 3)) { // Последняя строка?
+                cardDiv.className += ' last-row-card'; // Добавляем класс последней карты
+            }
+            cardDiv.style.backgroundImage = `url('pic/open_now_bg.png')`;
+
+            // Основная разметка карточки
+            cardDiv.innerHTML = `                
+                <img src="${cardData.imageUrl}" alt=""/>
+            `;
+
+            // Добавляем кружок с номером
+            let circleDiv = document.createElement('div');
+            circleDiv.className = 'circle-number';
+            circleDiv.style.position = 'absolute';
+            circleDiv.style.right = '5px';
+            circleDiv.style.top = '5px';
+            circleDiv.style.width = '30px';
+            circleDiv.style.height = '30px';
+            circleDiv.style.backgroundImage = `url('pic/cifra_back.png')`;
+            circleDiv.style.backgroundSize = 'cover';
+            circleDiv.style.borderRadius = '50%';
+            circleDiv.style.display = 'flex';
+            circleDiv.style.alignItems = 'center';
+            circleDiv.style.justifyContent = 'center';
+
+            // Цифра внутри кружка
+            let numberSpan = document.createElement('span');
+            numberSpan.className = 'circle-text';
+            numberSpan.style.color = '#fff';
+            numberSpan.style.fontSize = '14px';
+            numberSpan.textContent = `${cardData.number}`;
+            circleDiv.appendChild(numberSpan);
+
+            // Добавляем кружок в карточку
+            cardDiv.appendChild(circleDiv);
+
+            rowDiv.appendChild(cardDiv);
+        }
+        rowsContainer.appendChild(rowDiv);
+    }
+}
+
+           
     function startGame() {
+        generateCards()
         document.getElementById("event_calendar_screen_id").style.display = "block";
         document.getElementById('start-screen-id').style.display = "none";
         document.getElementById('rules-screen-id').style.display = "none";                
@@ -179,6 +176,7 @@ document.getElementById("return-game-button").addEventListener("click", function
         document.getElementById("rules-screen-id").style.display = "block";
         document.getElementById('start-screen-id').style.display = "none";                    
     }
+    
            
     function showResultScreen() {
         document.getElementById("main_questions_screen_id").style.display = "none";
@@ -201,31 +199,27 @@ document.getElementById("return-game-button").addEventListener("click", function
     //Показ подсказки места Су
     function showMisterSuHint() {
     document.getElementById("event_calendar_screen_id").style.display = "none";
-    document.getElementById("mistersuhint").style.display = "block";
-    document.getElementById('mistersu-hint-text').innerHTML = "Тестовое нажатие";
+    document.getElementById("open-card-id").style.display = "block";
+    document.getElementById('card-text').innerHTML = "Сет ТВОЙ БРО со скидкой 25%";
 }
 
 // Скрытие модального окна
     function hideDialog() {
-    document.getElementById('mistersuhint').style.display = "none";
+    document.getElementById('open-card-id').style.display = "none";
     document.getElementById("event_calendar_screen_id").style.display = "block";    
     }
 
-function hideDialogMisterSuHint() {
-    document.getElementById('mistersuhint').style.display = "none";
-    document.getElementById("event_calendar_screen_id").style.display = "block";
-    
-    }    
    
 </script>
 
 <script>
     let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
     tg.expand(); //расширяем на все окно     
-          
+    /*      
     document.getElementById('exit-game-lose').addEventListener('click', function(){
       tg.sendData("0");      
     });       
+    */
     
  </script>
 </body>
