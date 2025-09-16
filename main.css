@@ -22,9 +22,11 @@ body {
 .container {
             display: none;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f7f7f7;
+            align-items: center;  
+            height: auto;
+            background-image: url('pic/start_screen_bg2.png'); /* Ваш фон */
+            background-size: auto;            
+            background-repeat: round;
             
     }
         
@@ -34,9 +36,8 @@ body {
             max-width: 90%;
             overflow: hidden;
             padding: 40px;            
-            z-index: 1;   
-            background-image: url('pic/start_screen_bg2.png'); /* Ваш фон */
-            background-size: auto;            
+            align-items: center;            
+            z-index: 1;               
     }
         
         /* Обложка */
@@ -85,7 +86,22 @@ body {
             transform: scale(1.05);
     }       
 
+.music-button {
+    width: 100px;               /* Ширина кнопки */
+    height: 100px;              /* Высота кнопки */
+    border-radius: 50%;       /* Круглая форма */
+    background-color: transparent; /* Прозрачный фон */
+    margin-left: 20px;
+    margin-top: 20px;
+    outline: none;             /* Удаление контура при фокусировке */
+    cursor: pointer;          /* Курсор вида 'рука' при наведении */
+    overflow: hidden;          /* Скрывает всё, что выходит за границу кнопки */    
+}
 
+.music-button img {
+    max-width: 100%;           /* Изображение растягивается на всю ширину кнопки */
+    height: auto; 
+}
 .start-screen {                 
             width: 375px; 
             height: 734px;
@@ -106,7 +122,7 @@ body {
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-image: url('pic/bg_orange.png'); /* Путь к изображению */
+            background-image: url('pic/start_screen_bg2.png'); /* Путь к изображению */
             background-size: cover;
             background-position: center; /* Центруем изображение */
             background-repeat: no-repeat; /* Изображение не повторяется */

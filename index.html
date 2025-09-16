@@ -35,12 +35,9 @@
 
 <div id = "rules-screen-id" class="rules-screen">
     <div>
-        <div class="title_28_black">
+        <div class="title_28_white">
             <p>Правила игры</p>
-        </div>        
-        <div class="image-rules-screen">            
-            <img src="pic/little_cat_rules.png" alt="rules_screen_cat_pic">
-        </div>               
+        </div>                
         <div class="rules-screen-body">
             <br>
                 Отвечай на майско-огородные вопросы, и бонусы посыплются, как спелые яблоки: 🎉.<br>
@@ -57,20 +54,17 @@
     </div>   
 </div>
 
-<div id = "event_calendar_screen_id" class="container">      
-        
-    <div class="card-grid">        
-        <div id="cards-container"></div>
-    </div>    
-
+<div id = "event_calendar_screen_id" class="container">   
+    
     <div>
-        <button id="music-off" class="btn-main-screen-option">
-           <img src="pic/sound_pic.png" alt="turn_sound_pic">
+        <button id="music-off" class="music-button">
+           <img src="pic/sound_on.png" alt="turn_sound_pic">
         </button>                                                
     </div>
-
-    <div class="cover"></div>   
-   
+                
+    <div class="card-grid">        
+        <div id="cards-container"></div>
+    </div>   
             
 </div>
 
@@ -164,8 +158,8 @@ document.getElementById("return-game-button").addEventListener("click", function
 
            
     function startGame() {
-        generateCards()
-        document.getElementById("event_calendar_screen_id").style.display = "block";
+        generateCards()        
+        document.getElementById('event_calendar_screen_id').style.display = "block";
         document.getElementById('start-screen-id').style.display = "none";
         document.getElementById('rules-screen-id').style.display = "none";                
         audioMain.volume = 0.2;                
@@ -173,28 +167,32 @@ document.getElementById("return-game-button").addEventListener("click", function
     }
 
     function showRules() {
-        document.getElementById("rules-screen-id").style.display = "block";
+        document.getElementById('rules-screen-id').style.display = "block";
         document.getElementById('start-screen-id').style.display = "none";                    
     }
     
            
     function showResultScreen() {
-        document.getElementById("main_questions_screen_id").style.display = "none";
-        document.getElementById("game_stage_screen_id").style.display = "block";
+        document.getElementById('main_questions_screen_id').style.display = "none";
+        document.getElementById('game_stage_screen_id').style.display = "block";
     }
 
     function switchMusic() {
-        
-        if(isMusicPlay) {
-            audioMain.pause();
-            isMusicPlay = false;
-            document.getElementById('music-off').classList.add('btn-main-screen-option-active');            
-        } else {
-            audioMain.play();
-            isMusicPlay = true;
-            document.getElementById('music-off').classList.remove('btn-main-screen-option-active');            
-        }        
+    const button = document.getElementById('music-off');
+    const image = button.querySelector('img');
+
+    if (isMusicPlay) {
+        audioMain.pause();
+        isMusicPlay = false;
+        // Меняем картинку на новую
+        image.src = 'pic/sound_off.png';
+    } else {
+        audioMain.play();
+        isMusicPlay = true;
+        // Возвращаем исходную картинку
+        image.src = 'pic/sound_on.png';
     }
+}
         
     //Показ подсказки места Су
     function showMisterSuHint() {
