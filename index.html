@@ -63,7 +63,7 @@
     </div>
                 
     <div class="card-grid">        
-        <div id="cards-container"></div>
+        <div id="cards-container" class="card-container"></div>
     </div>   
             
 </div>
@@ -104,7 +104,7 @@ document.getElementById("return-game-button").addEventListener("click", function
 
 
     function generateCards() {
-    let rowsContainer = document.getElementById('cards-container');
+    let rowsContainer = document.getElementById('cards-container');   
 
     for (let i = 0; i < Math.ceil(cards.length / 3); i++) {
         let rowDiv = document.createElement('div');
