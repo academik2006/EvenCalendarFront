@@ -60,9 +60,8 @@
                 <img src="pic/sound_on.png" alt="turn_sound_pic">
             </button>                                                
         </div>
-
         <div>
-            <p id="data-today-text" class="title_28_white"> 21.10.2025 </p>                                 
+            <p id="data-today-text" class="text_black_white_picture_regular_28_white"> 21.10.2025 </p>                                 
         </div>
     </div>        
                 
@@ -72,10 +71,7 @@
 
     <div class="image-event-calendar-footer-screen">            
         <img src="pic/big_cat.png" alt="little_cat_pic">
-    </div>  
-
-
-            
+    </div>              
 </div>
 
 <div id="open-card-id" class="open-card">
@@ -109,6 +105,21 @@ document.getElementById('start-game2').addEventListener('click', startGame);
 document.getElementById('cards-container').addEventListener('click', showMisterSuHint)
 document.getElementById('show-rules').addEventListener('click', showRules);
 document.getElementById('music-off').addEventListener('click', switchMusic);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const todayElement = document.getElementById('data-today-text');
+    
+    if(todayElement){
+        let currentDate = new Date();
+
+        // Форматируем её в нужный вид 'DD.MM.YYYY'
+        let day = String(currentDate.getDate()).padStart(2, '0'); // День месяца с лидирующим нулём
+        let month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Номер месяца с лидирующим нулём (+1 потому что нумерация начинается с нуля)
+        let year = currentDate.getFullYear();
+        todayElement.textContent = `${day}.${month}.${year}`; 
+    }
+});
+
 
 document.getElementById("return-game-button").addEventListener("click", function () {
     hideDialog(); // Скрыть диалог    

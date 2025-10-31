@@ -98,12 +98,21 @@ body {
     }       
 
 .music-button {
-    width: 80px;               /* Ширина кнопки */
-    height: 80px;              /* Высота кнопки */    
-    margin-left: 20px;
     margin-top: 20px;
+    margin-left: 20px;
+    width: 80px;               /* Ширина кнопки */
+    height: 80px;              /* Высота кнопки */        
     outline: none;             /* Удаление контура при фокусировке */
     cursor: pointer;          /* Курсор вида 'рука' при наведении */
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    border: none;    
+}
+
+.data-container {
+    width: 80px;               
+    height: 80px;                              
     background-color: transparent;
     transition: all 0.3s ease-in-out;
     box-shadow: none;
@@ -161,11 +170,10 @@ body {
             background-repeat: no-repeat; /* Изображение не повторяется */
 }        
      
-.grid-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* два столбца одинаковой ширины */
-        gap: 10px; /* промежуток между элементами */
-        align-items: center;
+.grid-row { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Два столбца одинаковой ширины */            
+            
 }                
 
 .button-common {
@@ -220,47 +228,6 @@ body {
     margin-top: 0;
 }
 
-.modal-title {
-    margin-top: 20px;
-    font-size: 42px;
-    color: #2B2A29;
-    line-height: 1;
-    font-weight: bold;
-    font-family: 'Commissioner', Arial, sans-serif;    
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.title_28_black {
-    margin-top: 20px;
-    font-size: 28px;
-    line-height: 1;    
-    color: #2B2A29;
-    font-weight: bold;    
-    font-family: 'Commissioner', Arial, sans-serif;    
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.title_28_white {
-    margin-top: 20px;
-    font-size: 28px;
-    line-height: 1;    
-    color: #FFFF;
-    font-weight: bold;    
-    font-family: 'Commissioner', Arial, sans-serif;        
-    text-align: center;
-}
-
-.text_14_white {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1;    
-    color: #FFFF;
-    font-weight: normal;    
-    font-family: 'Commissioner', Arial, sans-serif;        
-    text-align: center;
-}
 
 .modal-image {
     display: flex;    
@@ -381,6 +348,57 @@ body {
 
 .icon {
     margin-right: 10px; /* Небольшой отступ между иконкой и текстом */
+}
+
+.modal-title {
+    margin-top: 20px;
+    font-size: 42px;
+    color: #2B2A29;
+    line-height: 1;
+    font-weight: bold;
+    font-family: 'Commissioner', Arial, sans-serif;    
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title_28_black {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1;    
+    color: #2B2A29;
+    font-weight: bold;    
+    font-family: 'Commissioner', Arial, sans-serif;    
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title_28_white {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1;    
+    color: #FFFF;
+    font-weight: bold;    
+    font-family: 'Commissioner', Arial, sans-serif;        
+    text-align: center;
+}
+
+.text_14_white {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1;    
+    color: #FFFF;
+    font-weight: normal;    
+    font-family: 'Commissioner', Arial, sans-serif;        
+    text-align: center;
+}
+
+.text_black_white_picture_regular_28_white {        
+    font-size: 28px;
+    line-height: 1;    
+    color: #FFFF;
+    font-weight: bold;    
+    font-family: 'black_picture', Arial, sans-serif;        
+    text-align: center;
 }
 
 
