@@ -94,7 +94,7 @@ body {
 }
 
 .card:hover {
-            transform: scale(1.05);
+        transform: scale(1.05);
     }       
 
 .music-button {
@@ -141,6 +141,25 @@ body {
             background-position: center; /* Центруем изображение */
             background-repeat: no-repeat; /* Изображение не повторяется */
         }
+
+.open-card {
+            display: none; /* Скрываем диалог по умолчанию */
+            position: fixed;
+            width: 375px; 
+            height: 734px;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+            background-image: url('pic/modal_open_card_bg.png'); /* Путь к изображению */
+            background-size: 100% 100%; /* Масштабируем изображение, чтобы оно занимало весь контейнер */
+            background-position: center; /* Центруем изображение */
+            background-repeat: no-repeat; /* Изображение не повторяется */
+}        
      
 .grid-row {
         display: grid;
@@ -150,6 +169,8 @@ body {
 }                
 
 .button-common {
+            
+            
             width: 327px;
             height: 64px;           
             font-size: 18px;
@@ -259,6 +280,11 @@ body {
     margin: auto; /* Отцентрируем изображение внутри контейнера */
 }
 
+.image-event-calendar-footer-screen {        
+    display: flex;    
+    justify-content: center;    
+}
+
 .image-rules-screen {
     display: flex;    
     justify-content: center;        
@@ -329,25 +355,7 @@ body {
 }
 
 
-.open-card {
-    display: none; /* Скрываем диалог по умолчанию */
-    position: fixed;
-    width: 375px; 
-    height: 734px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-    background-image: url('pic/modal_open_card_bg.png'); /* Путь к изображению */
-    background-size: 100% 100%; /* Масштабируем изображение, чтобы оно занимало весь контейнер */
-    background-position: center; /* Центруем изображение */
-    background-repeat: no-repeat; /* Изображение не повторяется */
-}
-
-.mistersu-hint-body {   
+.open-card-body {   
     margin-left: auto;
     margin-right: auto;    
     width: auto;     
